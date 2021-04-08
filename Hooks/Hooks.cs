@@ -59,7 +59,7 @@
         {
             if (scenarioContext.TestError != null)
             {
-                //Captures Screenshot
+                //Captures Screenshot when step has error
 
                 string title = RemoveCharactersNotSupportedByWindowsFileNames(scenarioContext.StepContext.StepInfo.Text);
                 string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
