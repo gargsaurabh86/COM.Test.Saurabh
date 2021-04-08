@@ -12,10 +12,10 @@
             Driver = driver;
         }
 
-        private void WaitForElementsToBeVisible(By locator, int waitDuration = 15)
+        private void WaitForElementToBeVisible(By locator, int waitDuration = 15)
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(waitDuration));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
         }
 
         private void WaitForElementToBeClickable(By locator, int waitDuration = 15)
@@ -31,13 +31,13 @@
 
         public void WaitForElementToBeClickableAndClick(By locator, int waitDuration = 15)
         {
-            WaitForElementToBeClickable(locator);
+            this.WaitForElementToBeClickable(locator);
             this.Click(locator);
         }
 
         public void EnterTextWithWait(By locator, string text)
         {
-            WaitForElementToBeClickable(locator);
+            this.WaitForElementToBeClickable(locator);
             Driver.FindElement(locator).Clear();
             Driver.FindElement(locator).SendKeys(text);
         }
@@ -47,14 +47,9 @@
             Driver.Navigate().GoToUrl(url);
         }
 
-        public bool? IsLinkPresentOnPage(By signOutLink)
-        {
-            return Driver.FindElement(signOutLink).Displayed;
-        }
-
         public string GetText(By locator)
         {
-            WaitForElementsToBeVisible(locator);
+            this.WaitForElementToBeVisible(locator);
             return Driver.FindElement(locator).Text;
         }
     }
