@@ -3,11 +3,11 @@
     using Drivers;
     using OpenQA.Selenium;
     using Pages.Locators;
-    using Resources;
+    using System.Configuration;
 
     public class HomePage : HomePageLocators
     {
-        private IWebDriver Driver;
+        private readonly IWebDriver Driver;
         readonly DriverHelper driverHelper;
 
         public HomePage(IWebDriver driver)
@@ -18,7 +18,7 @@
 
         internal void NavigateToShoppingWebsite()
         {
-            driverHelper.NavigateToURL(Constant.Website);
+            driverHelper.NavigateToURL(ConfigurationManager.AppSettings["AppURL"]);
         }
 
         internal void NavigateToSignInPage()

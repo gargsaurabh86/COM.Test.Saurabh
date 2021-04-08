@@ -3,11 +3,11 @@
     using Drivers;
     using OpenQA.Selenium;
     using Pages.Locators;
-    using Resources;
+    using System.Configuration;
 
     public class SignInPage : SignInPageLocators
     {
-        private IWebDriver Driver;
+        private readonly IWebDriver Driver;
         readonly DriverHelper driverHelper;
 
         public SignInPage(IWebDriver driver)
@@ -17,12 +17,12 @@
         }
         private void EnterAlreadyRegisteredUserEmailAddress()
         {
-            driverHelper.EnterTextWithWait(this.AlreadyRegisteredUserEmailAddressInput, Constant.RegisteredEmailAddress);
+            driverHelper.EnterTextWithWait(this.AlreadyRegisteredUserEmailAddressInput, ConfigurationManager.AppSettings["RegisteredEmailAddress"]);
         }
 
         private void EnterAlreadyRegisteredUserPassword()
         {
-            driverHelper.EnterTextWithWait(this.AlreadyRegisteredUserPasswordInput, Constant.ValidPassword);
+            driverHelper.EnterTextWithWait(this.AlreadyRegisteredUserPasswordInput, ConfigurationManager.AppSettings["ValidPassword"]);
         }
 
         public void SigninAsValidRegisteredCustomer()

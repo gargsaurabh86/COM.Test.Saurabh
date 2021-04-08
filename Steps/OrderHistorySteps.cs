@@ -1,7 +1,7 @@
 ﻿namespace COM.Test.SaurabhGarg.Steps
 {
-    using COM.Test.SaurabhGarg.Drivers;
-    using COM.Test.SaurabhGarg.Pages.Executors;
+    using Drivers;
+    using Pages.Executors;
     using NUnit.Framework;
     using TechTalk.SpecFlow;
 
@@ -50,16 +50,16 @@
             shoppingCartPage.NavigateToOrderHistoryPage();
         }
 
-        [When(@"I view order details")]
-        public void WhenIViewOrderDetails()
+        [When(@"I view last order details")]
+        public void WhenIViewLastOrderDetails()
         {
             orderHistoryPage.ViewOrderDetails();
         }
 
-        [Then(@"order details are same as order placed")]
-        public void ThenOrderDetailsAreSameAsOrderPlaced()
+        [Then(@"order details should contain '(.*)' order")]
+        public void ThenOrderDetailsShouldContainOrder(string productOrdered)
         {
-            Assert.IsTrue(orderHistoryPage.VerifyOrderDetails());
+            Assert.IsTrue(orderHistoryPage.VerifyOrderDetails(productOrdered));
         }
     }
 }

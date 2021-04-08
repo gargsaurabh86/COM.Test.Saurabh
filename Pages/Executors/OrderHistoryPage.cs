@@ -3,11 +3,10 @@
     using Drivers;
     using OpenQA.Selenium;
     using Pages.Locators;
-    using Resources;
 
     public class OrderHistoryPage : OrderHistoryPageLocators
     {
-        private IWebDriver Driver;
+        private readonly IWebDriver Driver;
         readonly DriverHelper driverHelper;
 
         public OrderHistoryPage(IWebDriver driver)
@@ -20,9 +19,9 @@
             driverHelper.WaitForElementToBeClickableAndClick(OrderReferenceLink);
         }
 
-        internal bool? VerifyOrderDetails()
+        internal bool? VerifyOrderDetails(string productOrdered)
         {
-            return driverHelper.GetText(OrderTotalPrice) == Constant.OrderTotalPrice;
+            return driverHelper.GetText(ProductOrderedDescription).Contains(productOrdered);
         }
     }
 }

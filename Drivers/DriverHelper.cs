@@ -12,27 +12,27 @@
             Driver = driver;
         }
 
-        public void WaitForElementsToBeVisible(By locator, int waitDuration = 15)
+        private void WaitForElementsToBeVisible(By locator, int waitDuration = 15)
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(waitDuration));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
         }
 
-        public void WaitForElementToBeClickable(By locator, int waitDuration = 15)
+        private void WaitForElementToBeClickable(By locator, int waitDuration = 15)
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(waitDuration));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
+        }
+
+        private void Click(By locator)
+        {
+            Driver.FindElement(locator).Click();
         }
 
         public void WaitForElementToBeClickableAndClick(By locator, int waitDuration = 15)
         {
             WaitForElementToBeClickable(locator);
             this.Click(locator);
-        }
-
-        public void Click(By locator)
-        {
-            Driver.FindElement(locator).Click();
         }
 
         public void EnterTextWithWait(By locator, string text)
@@ -54,6 +54,7 @@
 
         public string GetText(By locator)
         {
+            WaitForElementsToBeVisible(locator);
             return Driver.FindElement(locator).Text;
         }
     }

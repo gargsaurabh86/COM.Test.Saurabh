@@ -13,7 +13,7 @@
         readonly MyAccountPage myAccountPage;
         readonly YourPersonalInformationPage yourPersonalInformationPage;
 
-        private WebDriver _webDriver;
+        private readonly WebDriver _webDriver;
 
         public UpdatePersonalInformationStep(WebDriver webDriver)
         {

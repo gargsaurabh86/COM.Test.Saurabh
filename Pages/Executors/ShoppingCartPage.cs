@@ -7,7 +7,7 @@
     public class ShoppingCartPage : ShoppingCartPageLocators
     {
         readonly SignInPage signInPage;
-        private IWebDriver Driver;
+        private readonly IWebDriver Driver;
         readonly DriverHelper driverHelper;
 
         public ShoppingCartPage(IWebDriver driver)

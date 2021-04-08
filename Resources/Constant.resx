@@ -117,22 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NewFirstName" xml:space="preserve">
-    <value>Myfirstname</value>
-  </data>
-  <data name="OrderTotalPrice" xml:space="preserve">
-    <value>$19.25</value>
-  </data>
-  <data name="PersonalInformationUpdatedSucessfullyMessage" xml:space="preserve">
+  <data name="FirstNameUpdatedSucessfullyMessage" xml:space="preserve">
     <value>Your personal information has been successfully updated.</value>
   </data>
-  <data name="RegisteredEmailAddress" xml:space="preserve">
-    <value>test@abc123.com</value>
-  </data>
-  <data name="ValidPassword" xml:space="preserve">
-    <value>test123</value>
-  </data>
-  <data name="Website" xml:space="preserve">
-    <value>http://automationpractice.com/</value>
+  <data name="NewFirstName" xml:space="preserve">
+    <value>Myfirstname</value>
   </data>
 </root>

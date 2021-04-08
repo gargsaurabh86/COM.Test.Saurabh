@@ -6,7 +6,7 @@
 
     public class MyAccountPage : MyAccountPageLocators
     {
-        private IWebDriver Driver;
+        private readonly IWebDriver Driver;
         readonly DriverHelper driverHelper;
 
         public MyAccountPage(IWebDriver driver)

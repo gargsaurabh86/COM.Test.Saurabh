@@ -5,6 +5,6 @@
     {
         public By OrderReferenceLink => By.XPath("//table[@id='order-list']//tr[1]/td[1]/a");
 
-        public By OrderTotalPrice => By.XPath("//table[@id='order-list']//tr[1]/td[3]/span[1]");
+        public By ProductOrderedDescription => By.XPath("//div[@id='order-detail-content']/table/tbody/tr/td[2]/label");
     }
 }

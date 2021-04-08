@@ -14,13 +14,12 @@
     [Binding]
     public class Hooks
     {
-        private WebDriver _webDriver;
+        private readonly WebDriver _webDriver;
         public Hooks(WebDriver webDriver) => _webDriver = webDriver;
 
         [BeforeScenario]
         public void InitialiseWebDriver()
         {
-            string directoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var browserName = ConfigurationManager.AppSettings["BrowserName"].ToLower(CultureInfo.CurrentCulture);
 
 
@@ -60,6 +59,8 @@
         {
             if (scenarioContext.TestError != null)
             {
+                //Captures Screenshot
+
                 string title = RemoveCharactersNotSupportedByWindowsFileNames(scenarioContext.StepContext.StepInfo.Text);
                 string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
                 string filename = $"{Runname}.jpg";
@@ -73,7 +74,7 @@
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Expection occured");
+                    Console.WriteLine("Expection occured : {1}", e.Message);
                 }
             }
         }

@@ -6,7 +6,7 @@
 
     public class TshirtsPage : TshirtsPageLocators
     {
-        private IWebDriver Driver;
+        private readonly IWebDriver Driver;
         readonly DriverHelper driverHelper;
 
         public TshirtsPage(IWebDriver driver)

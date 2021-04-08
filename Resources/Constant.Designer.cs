@@ -61,56 +61,20 @@ namespace COM.Test.SaurabhGarg.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your personal information has been successfully updated..
+        /// </summary>
+        internal static string FirstNameUpdatedSucessfullyMessage {
+            get {
+                return ResourceManager.GetString("FirstNameUpdatedSucessfullyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Myfirstname.
         /// </summary>
         internal static string NewFirstName {
             get {
                 return ResourceManager.GetString("NewFirstName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to $19.25.
-        /// </summary>
-        internal static string OrderTotalPrice {
-            get {
-                return ResourceManager.GetString("OrderTotalPrice", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your personal information has been successfully updated..
-        /// </summary>
-        internal static string PersonalInformationUpdatedSucessfullyMessage {
-            get {
-                return ResourceManager.GetString("PersonalInformationUpdatedSucessfullyMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to test@abc123.com.
-        /// </summary>
-        internal static string RegisteredEmailAddress {
-            get {
-                return ResourceManager.GetString("RegisteredEmailAddress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to test123.
-        /// </summary>
-        internal static string ValidPassword {
-            get {
-                return ResourceManager.GetString("ValidPassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to http://automationpractice.com/.
-        /// </summary>
-        internal static string Website {
-            get {
-                return ResourceManager.GetString("Website", resourceCulture);
             }
         }
     }

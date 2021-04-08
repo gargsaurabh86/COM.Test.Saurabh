@@ -1,5 +1,4 @@
-﻿
-namespace COM.Test.SaurabhGarg.Drivers
+﻿namespace COM.Test.SaurabhGarg.Drivers
 {
     using OpenQA.Selenium;
     public class WebDriver
